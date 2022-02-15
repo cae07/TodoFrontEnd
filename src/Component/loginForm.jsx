@@ -50,6 +50,7 @@ function LoginForm() {
         >
           Entrar
         </button>
+        <span>Ainda não tem registro?</span>
         <a href="/createUser">Faça seu registro</a>
       </form>
     </div>
