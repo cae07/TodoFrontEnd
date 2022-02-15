@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import myContext from '../Context/myContext';
 import api from "../api";
 
 function LoginForm() {
+  const { setToken } = useContext(myContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleClick = async () => {
-    const data = { email, password };
+    const user = { email, password };
 
     try {
-      const token = await api.post('/login', data);
-      console.log(token);
+      const { data } = await api.post('/login', user);
+      setToken(data.token);
+      navigate('/tasks');
     } catch (error) {
       console.log(error);
       alert('Erro interno, tente atualizar a página.')
