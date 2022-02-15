@@ -1,10 +1,12 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Login } from './Pages';
 
 function App() {
   return (
-    <div>
-      <h1>first commit</h1>    
-    </div>
+    <Routes>
+      <Route path="/" element={ <Login /> } />
+    </Routes>
   );
 }
 
