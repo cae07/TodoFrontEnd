@@ -15,7 +15,7 @@ function LoginForm() {
       console.log(error);
       alert('Erro interno, tente atualizar a página.')
     }
-  }
+  };
 
   return (
     <div>

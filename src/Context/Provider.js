@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import myContext from './myContext';
 
 function Provider({ children }) {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState('');
 
   const providerValue = {
     token,

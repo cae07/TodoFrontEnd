@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseurl: 'https://git.heroku.com/todo-list-trybe.git',
+  baseURL: 'http://localhost:3001',
 });
 
 export default api;
