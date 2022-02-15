@@ -45,6 +45,7 @@ function LoginForm() {
         >
           Entrar
         </button>
+        <a href="/createUser">Faça seu registro</a>
       </form>
     </div>
   );
