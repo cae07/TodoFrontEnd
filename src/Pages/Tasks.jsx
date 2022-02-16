@@ -1,8 +1,9 @@
 import React from 'react';
+import { TasksHeader } from '../Component';
 
 function Tasks() {
   return (
-    <h1>tasks</h1>
+    <TasksHeader />
   );
 }
 
