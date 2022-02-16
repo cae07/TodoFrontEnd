@@ -3,14 +3,18 @@ import myContext from '../Context/myContext';
 import api from '../api';
 import { AlertModal } from '../Component';
 import { INTERNAL_ERROR, ERROR_TASK } from '../Dictionary/errorMessages';
+import { useNavigate } from 'react-router-dom';
 
 function TasksHeader() {
   const { email, setTextModal, setModal, token } = useContext(myContext);
   const [task, setTask] = useState('');
+  const navigate = useNavigate();
 
   const sendNewTask = async () => {
     await api.post('/tasks/newTask', { task }, { headers: { 'authorization': token } })
       .then((response) => setTask(response));
+    
+    return true;
   };
 
   const handleClick = async () => {
@@ -21,7 +25,9 @@ function TasksHeader() {
         return setModal(true);
       }
 
-      return await sendNewTask();
+      await sendNewTask();
+      navigate('/loading');
+      return navigate('/tasks');
     } catch (error) {
       setTextModal(INTERNAL_ERROR);
       return setModal(true);
