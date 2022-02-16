@@ -59,8 +59,8 @@ function StartButton() {
       if (isValid !== 'readyToGo') return validateErrors(isValid);
   
       const user = { email, password };
-      if(pathname === '/') return logUser(user);
-      return logNewUser(user);
+      if(pathname === '/') return await logUser(user);
+      return await logNewUser(user);
     } catch (error) {
       setTextModal(INTERNAL_ERROR);
       setModal(true);

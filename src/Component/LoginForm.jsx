@@ -1,14 +1,9 @@
 import React, { useContext } from 'react';
 import myContext from '../Context/myContext';
-import Modal from 'react-bootstrap/Modal';
-import { Button } from 'react-bootstrap';
-import StartButton from './StartButton';
+import { StartButton, AlertModal } from './index';
 
 function LoginForm() {
   const {
-    modal,
-    textModal,
-    setModal,
     email,
     setEmail,
     password,
@@ -18,17 +13,7 @@ function LoginForm() {
   return (
     <div>
       <h1>LOGIN</h1>
-      <Modal show={ modal } onHide={ () => setModal(false) }>
-          <Modal.Header closeButton>
-            <Modal.Title>Erro!</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>{ textModal }</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={ () => setModal(false) }>
-              fechar
-            </Button>
-          </Modal.Footer>
-        </Modal>
+      <AlertModal />
       <form>
         <label htmlFor="email-input">
           <input

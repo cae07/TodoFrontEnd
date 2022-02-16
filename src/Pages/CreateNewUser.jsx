@@ -1,13 +1,19 @@
 import React, { useContext } from 'react';
 import myContext from '../Context/myContext';
-import StartButton from '../Component/StartButton';
+import { StartButton, AlertModal } from '../Component';
 
 function CreateNewUser() {
-  const { password, setPassword, email, setEmail } = useContext(myContext);
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword
+  } = useContext(myContext);
 
   return (
     <div>
         <h1>Faça seu cadastro</h1>
+        <AlertModal />
         <form>
           <label htmlFor="email-input">
             <input
