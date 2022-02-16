@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import myContext from '../Context/myContext';
 import api from '../api';
-import { UpdateModal } from './Modal';
+import { UpdateModal, DeleteModal } from './Modal';
 
 function TasksBody() {
   const {
@@ -11,6 +11,10 @@ function TasksBody() {
     setToUpdateTask,
     setToUpdateState,
     modalToUpdate,
+    modalToDelete,
+    setModalToDelete,
+    // setTextModal,
+    // setModal,
   } = useContext(myContext);
   const [tasks, setTasks] = useState([]);
   
@@ -18,7 +22,7 @@ function TasksBody() {
     // pag pesquisa: 'https://qastack.com.br/programming/40988238/sending-the-bearer-token-with-axios';
     api.get('/tasks', { headers: { authorization: token } })
     .then((response) => setTasks(response.data));
-  }, [modalToUpdate]);
+  }, [modalToUpdate, modalToDelete]);
 
   const handleUpdate = async (task) => {
     setIDToUpdate(task._id);
@@ -28,13 +32,22 @@ function TasksBody() {
   };
 
   const handleDelete = async (task) => {
-    console.log(task);
+    setIDToUpdate(task._id);
+    setModalToDelete(true);
+    // try {
+    //   const id = task._id;
+    //   await api.delete('/tasks/delete', { data: { id }, headers: { 'authorization': token } })
+    // } catch (error) {      
+    //   setTextModal(INTERNAL_ERROR);
+    //   return setModal(true);
+    // }
   };
   
   return (
     // pag pesqisa: 'https://www.homehost.com.br/blog/criar-sites/tabela-html/'
     <div>
     <UpdateModal />
+    <DeleteModal />
       <table>
         <tr>
           <td>Index</td>
