@@ -7,6 +7,7 @@ import {
   ERROR_FIELD,
   ERROR_EMAIL,
   ERROR_PASSWORD,
+  INTERNAL_ERROR,
 } from '../Dictionary/errorMessages';
 
 function StartButton() {
@@ -53,7 +54,7 @@ function StartButton() {
       const user = { email, password };
       await logUser(user);      
     } catch (error) {
-      setTextModal('Erro Interno, por favor tente mais tarde.');
+      setTextModal(INTERNAL_ERROR);
       setModal(true);
     }
   };
