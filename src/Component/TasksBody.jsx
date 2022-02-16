@@ -5,35 +5,36 @@ import api from '../api';
 function TasksBody() {
   const { token } = useContext(myContext);
   const [tasks, setTasks] = useState([]);
-  console.log(tasks);
-
+  
   useEffect(() => {
     api.get('/tasks', { headers: { authorization: token } })
-      .then((response) => setTasks(response));
+    .then((response) => setTasks(response.data));
   }, []);
-
+  console.log(tasks);
+  
   return (
     <table>
     <tr>
+      <td>Index</td>
       <td>TAREFA</td>
       <td>STATUS</td>
-      <td>
-        <button type="button">
-          Atualizar
-        </button>
-        <button type="button">
-          Deletar
-        </button>
-      </td>
-      <td></td>
+      <td>Atualizar/Deletar</td>
     </tr>
-    {/* {tasks.map((task) => (
+    {tasks.map((task, index) => (
       <tr key={ task.id }>
-        <td>{ task.}</td>
-        <td></td>
-        <td></td>
+        <td>{ index + 1 }</td> {/* para não começar do valor 0 */}
+        <td>{ task.task}</td>
+        <td>{ task.status }</td>
+        <td>
+          <button type="button">
+            Atualizar
+          </button>
+          <button type="button">
+            Deletar
+          </button>
+        </td>
       </tr>
-    ))} */}
+    ))}
     </table>
   );
 }
