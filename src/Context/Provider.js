@@ -4,8 +4,12 @@ import myContext from './myContext';
 
 function Provider({ children }) {
   const [token, setToken] = useState('');
+
   const [modal, setModal] = useState(false);
   const [textModal, setTextModal] = useState('');
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const providerValue = {
     token,
@@ -14,6 +18,10 @@ function Provider({ children }) {
     setModal,
     textModal,
     setTextModal,
+    email,
+    setEmail,
+    password,
+    setPassword,
   };
 
   return (
