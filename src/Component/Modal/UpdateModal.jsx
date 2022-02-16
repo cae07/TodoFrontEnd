@@ -39,20 +39,31 @@ function UpdateModal() {
         <Modal.Title>Atualizar tarefa</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <input
-          type="text"
-          value={ toUpdateTask }
-          onChange={ (e) => setToUpdateTask(e.target.value) }
-        />
-        <input
-          type="text"
-          value={ toUpdateState }
-          onChange={ (e) => setToUpdateState(e.target.value) }
-        />
+        <label htmlFor="input-update-task">
+          Tarefa
+          <input
+            type="text"
+            id="input-update-task"
+            value={ toUpdateTask }
+            onChange={ (e) => setToUpdateTask(e.target.value) }
+          />
+        </label>
+        <label htmlFor="input-update-state">
+          Status
+          <select
+            id="input-update-state"
+            name="status"
+            onChange={ (e) => setToUpdateState(e.target.value) }
+          >
+            <option value="pendente">pendente</option>
+            <option value="em andamento">em andamento</option>
+            <option value="pronto">pronto</option>
+          </select>
+        </label>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={ handleClick }>
-          fechar
+          atualizar
         </Button>
       </Modal.Footer>
     </Modal>
