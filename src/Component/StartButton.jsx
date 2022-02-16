@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import api from "../api";
 import { validateFields } from './helpers';
 import myContext from '../Context/myContext';
@@ -20,6 +20,7 @@ function StartButton() {
   } = useContext(myContext);
 
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const validateErrors = (error) => {
     switch (error) {
@@ -46,13 +47,20 @@ function StartButton() {
     navigate('/tasks');
   };
 
+  const logNewUser = async (user) => {
+    const { data } = await api.post('/createUser', user);
+    setToken(data.token);
+    navigate('/tasks');
+  };
+
   const handleClick = async () => {
     try {
       const isValid = validateFields(email, password);
       if (isValid !== 'readyToGo') return validateErrors(isValid);
   
       const user = { email, password };
-      await logUser(user);      
+      if(pathname === '/') return logUser(user);
+      return logNewUser(user);
     } catch (error) {
       setTextModal(INTERNAL_ERROR);
       setModal(true);

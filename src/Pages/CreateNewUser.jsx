@@ -1,25 +1,9 @@
-import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext } from 'react';
 import myContext from '../Context/myContext';
-import api from "../api";
+import StartButton from '../Component/StartButton';
 
 function CreateNewUser() {
-  const { setToken } = useContext(myContext);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
-
-  const handleClick = async () => {
-    const newUser = { email, password };
-
-    try {
-      const { data } = await api.post('/createUser', newUser);
-      setToken(data.token);
-      navigate('/tasks');
-    } catch (error) {
-      alert(error.message)
-    }
-  };
+  const { password, setPassword, email, setEmail } = useContext(myContext);
 
   return (
     <div>
@@ -43,12 +27,7 @@ function CreateNewUser() {
               onChange={ (e) => setPassword(e.target.value) }
             />
           </label>
-          <button
-            type="button"
-            onClick={ handleClick }
-          >
-            Entrar
-          </button>
+          <StartButton />
       </form>
     </div>
   );
