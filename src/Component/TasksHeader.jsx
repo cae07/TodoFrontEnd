@@ -1,12 +1,17 @@
 import React, { useContext, useState } from 'react';
 import myContext from '../Context/myContext';
 import api from '../api';
-import { AlertModal } from '../Component';
+import { AlertModal } from './Modal';
 import { INTERNAL_ERROR, ERROR_TASK } from '../Dictionary/errorMessages';
 import { useNavigate } from 'react-router-dom';
 
 function TasksHeader() {
-  const { email, setTextModal, setModal, token } = useContext(myContext);
+  const {
+    email,
+    setTextModal,
+    setModal,
+    token,
+  } = useContext(myContext);
   const [task, setTask] = useState('');
   const navigate = useNavigate();
 

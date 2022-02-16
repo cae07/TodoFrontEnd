@@ -7,9 +7,14 @@ function Provider({ children }) {
 
   const [modal, setModal] = useState(false);
   const [textModal, setTextModal] = useState('');
+  const [modalToUpdate, setModalToUpdate] = useState(false);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const [toUpdateTask, setToUpdateTask] = useState('')
+  const [toUpdateState, setToUpdateState] = useState('')
+  const [idToUpdate, setIDToUpdate] = useState('');
 
   const providerValue = {
     token,
@@ -18,10 +23,18 @@ function Provider({ children }) {
     setModal,
     textModal,
     setTextModal,
+    modalToUpdate,
+    setModalToUpdate,
     email,
     setEmail,
     password,
     setPassword,
+    toUpdateTask,
+    setToUpdateTask,
+    toUpdateState,
+    setToUpdateState,
+    idToUpdate,
+    setIDToUpdate,
   };
 
   return (

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import myContext from '../Context/myContext';
-import { StartButton, AlertModal } from './index';
+import { StartButton } from './index';
+import { AlertModal } from './Modal';
 
 function LoginForm() {
   const {

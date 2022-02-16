@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import myContext from '../Context/myContext';
-import { StartButton, AlertModal } from '../Component';
+import { StartButton } from '../Component';
+import { AlertModal } from '../Component/Modal';
 
 function CreateNewUser() {
   const {
