@@ -1,9 +1,12 @@
 import React from 'react';
-import { TasksHeader } from '../Component';
+import { TasksHeader, TasksBody } from '../Component';
 
 function Tasks() {
   return (
-    <TasksHeader />
+    <>
+      <TasksHeader />
+      <TasksBody />
+    </>
   );
 }
 
