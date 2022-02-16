@@ -15,6 +15,7 @@ function DeleteModal() {
   console.log(token);
 
   const handleDeleteTask = async () => {
+    // pag pesquisa: 'https://stackoverflow.com/questions/51069552/axios-delete-request-with-body-and-headers/51069816'
     await api.delete('/tasks/delete', { 
       data: { id: idToUpdate },
       headers: { 'authorization': token }

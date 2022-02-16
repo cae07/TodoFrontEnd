@@ -34,13 +34,6 @@ function TasksBody() {
   const handleDelete = async (task) => {
     setIDToUpdate(task._id);
     setModalToDelete(true);
-    // try {
-    //   const id = task._id;
-    //   await api.delete('/tasks/delete', { data: { id }, headers: { 'authorization': token } })
-    // } catch (error) {      
-    //   setTextModal(INTERNAL_ERROR);
-    //   return setModal(true);
-    // }
   };
   
   return (
