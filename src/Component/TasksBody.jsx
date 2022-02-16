@@ -11,7 +11,14 @@ function TasksBody() {
     api.get('/tasks', { headers: { authorization: token } })
     .then((response) => setTasks(response.data));
   }, []);
-  console.log(tasks);
+
+  const handleUpdate = (taskId) => {
+    console.log(taskId);
+  };
+
+  const handleDelete = (taskId) => {
+    console.log(taskId);
+  };
   
   return (
     // pag pesqisa: 'https://www.homehost.com.br/blog/criar-sites/tabela-html/'
@@ -23,15 +30,21 @@ function TasksBody() {
         <td>Atualizar/Deletar</td>
       </tr>
       {tasks.map((task, index) => (
-        <tr key={ task.id }>
+        <tr key={ task._id }>
           <td>{ index + 1 }</td> {/* para não começar do valor 0 */}
           <td>{ task.task}</td>
           <td>{ task.status }</td>
           <td>
-            <button type="button">
+            <button
+              type="button"
+              onClick={ () => handleUpdate(task._id) }
+            >
               Atualizar
             </button>
-            <button type="button">
+            <button
+              type="button"
+              onClick={ () => handleDelete(task._id) }
+            >
               Deletar
             </button>
           </td>
