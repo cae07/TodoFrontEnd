@@ -9,7 +9,7 @@ function TasksHeader() {
   const [task, setTask] = useState('');
 
   const sendNewTask = async () => {
-    await api.post('/newTask', { header: { authorization: token } }, task);
+    await api.post('/newTask', { headers: { authorization: token } }, task);
   };
 
   const handleClick = async () => {
