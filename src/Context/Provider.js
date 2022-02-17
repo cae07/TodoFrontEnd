@@ -9,6 +9,7 @@ function Provider({ children }) {
   const [textModal, setTextModal] = useState('');
   const [modalToUpdate, setModalToUpdate] = useState(false);
   const [modalToDelete, setModalToDelete] = useState(false);
+  const [modalToSort, setModalToSort] = useState(false);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -28,6 +29,8 @@ function Provider({ children }) {
     setModalToUpdate,
     modalToDelete,
     setModalToDelete,
+    modalToSort,
+    setModalToSort,
     email,
     setEmail,
     password,

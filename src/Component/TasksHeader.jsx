@@ -12,6 +12,7 @@ function TasksHeader() {
     setTextModal,
     setModal,
     token,
+    setModalToSort,
   } = useContext(myContext);
   const [task, setTask] = useState('');
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ function TasksHeader() {
   return (
     <header className="header-container">
       <AlertModal />
+      <orderTasksModal />
       <span>{ email }</span>
       <Form className="form-container">
         <label htmlFor="input-new-task">
@@ -60,6 +62,13 @@ function TasksHeader() {
           className="button"
         >
           Nova tarefa
+        </button>
+        <button
+          type="button"
+          onClick={ () => setModalToSort(true) }
+          className="button"
+        >
+          Ordenar tarefas
         </button>
       </Form>
     </header>
