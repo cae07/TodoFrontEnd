@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import myContext from '../Context/myContext';
 import api from '../api';
-import { AlertModal } from './Modal';
+import { AlertModal, OrderTasksModal } from './Modal';
 import { INTERNAL_ERROR, ERROR_TASK } from '../Dictionary/errorMessages';
 import { useNavigate } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
@@ -44,7 +44,7 @@ function TasksHeader() {
   return (
     <header className="header-container">
       <AlertModal />
-      <orderTasksModal />
+      <OrderTasksModal />
       <span>{ email }</span>
       <Form className="form-container">
         <label htmlFor="input-new-task">

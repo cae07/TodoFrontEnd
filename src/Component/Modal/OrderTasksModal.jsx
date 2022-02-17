@@ -7,14 +7,15 @@ function OrderTasksModal() {
   const {
     setModal,
     modalToSort,
+    setModalToSort,
   } = useContext(myContext);
 
   const handleOrderedTasks = (e) => {
-    console.log(e);
+    console.log(e.target.value);
   };
 
-  const handleClick = (e) => {
-    console.log(e);
+  const handleClick = () => {
+    setModalToSort(false)
   };
 
   return (
@@ -30,6 +31,7 @@ function OrderTasksModal() {
               name="orderedTasks"
               onChange={ handleOrderedTasks }
             >
+              <option value="">Escolha</option>
               <option value="name">Name</option>
               <option value="status">Status</option>
               <option value="data">Data criação</option>
