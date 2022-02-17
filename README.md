@@ -177,6 +177,13 @@ O campo não pode ser vazio
 
 * Adicionar filtros para visualização da tabela
 * Continuar os testes do app
-* Deploy no vercel
+
+---
+
+## Link para o projeto
+
+`https://todo-front-end-pi.vercel.app/`
+
+---
 
 # Divirta-se
