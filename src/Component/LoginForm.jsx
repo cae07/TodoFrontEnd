@@ -73,7 +73,7 @@ function LoginForm() {
   return (
     <div className="login-container">
       <AlertModal />
-      <Tabs defaultActiveKey="login" id="uncontrolled-tab-example" className="mb-3">
+      <Tabs defaultActiveKey="Login" id="uncontrolled-tab-example" className="mb-3">
         <Tab eventKey="Login" title="Login">
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
