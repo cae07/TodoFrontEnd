@@ -82,6 +82,7 @@ function LoginForm() {
                 placeholder="insira seu e-mail"
                 value={ email }
                 onChange={ (e) => setEmail(e.target.value) }
+                data-testid="input-login"
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -90,6 +91,7 @@ function LoginForm() {
                 placeholder="insira sua senha"
                 value={ password }
                 onChange={ (e) => setPassword(e.target.value) }
+                data-testid="input-password"
               />
             </Form.Group>
             <Button
