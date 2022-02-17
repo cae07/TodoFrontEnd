@@ -44,7 +44,6 @@ function UpdateModal() {
             Tarefa
             <Form.Control
               type="text"
-              id="input-update-task"
               value={ toUpdateTask }
               onChange={ (e) => setToUpdateTask(e.target.value) }
             />
@@ -52,7 +51,6 @@ function UpdateModal() {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             Status
             <Form.Select
-              id="input-update-state"
               name="status"
               onChange={ (e) => setToUpdateState(e.target.value) }
             >
