@@ -79,16 +79,14 @@ function LoginForm() {
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Control 
                 type="email"
-                id="email-input"
                 placeholder="insira seu e-mail"
                 value={ email }
                 onChange={ (e) => setEmail(e.target.value) }
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Control
                 type="password"
-                id="password-input"
                 placeholder="insira sua senha"
                 value={ password }
                 onChange={ (e) => setPassword(e.target.value) }
@@ -105,10 +103,9 @@ function LoginForm() {
         </Tab>
         <Tab eventKey="Cadastro" title="Cadastro">
           <Form>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicEmailtwo">
           <Form.Control
                 type="email"
-                id="email-input"
                 placeholder="insira seu e-mail"
                 value={ email }
                 onChange={ (e) => setEmail(e.target.value) }
@@ -117,10 +114,9 @@ function LoginForm() {
                 email precisa ser válido.
               </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="formBasicPasswordtwo">
             <Form.Control
                 type="password"
-                id="password-input"
                 placeholder="insira sua senha"
                 value={ password }
                 onChange={ (e) => setPassword(e.target.value) }
