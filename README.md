@@ -1,70 +1,182 @@
-# Getting Started with Create React App
+# Bem vindos ao TodoFrontEnd
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Objetivo
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+Projeto desenvolvido para avaliação de capacidades em uma vaga fullStack.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## O desafio
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+A empresa Ebytr está passando por problemas de produtividade/controle porque as pessoas colaboradoras vêm tendo dificuldade na organização de suas tarefas individuais. Por esse motivo, a diretora de produto Carolina Bigonha decidiu implantar uma nova forma de organizar as tarefas.
+Você foi a pessoa contratada para desenvolver um sistema capaz de auxiliar as pessoas colaboradoras a se organizar e ter mais produtividade.
+Na Ebytr o time de desenvolvimento utiliza a Stack MERN para criar suas aplicações. Foi combinado com a Ebytr que você utilizará essa mesma Stack para resolver o problema de organização e produtividade da empresa.
+Abaixo estão (i) os requisitos técnicos, (ii) as funcionalidades, (iii) critérios de avaliação do desafio e (iv) algumas dicas importantes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Requisitos técnicos:
 
-### `npm run build`
+- Front-End em React;
+- Back-End em NodeJS, com MongoDB;
+- Arquitetura em camadas;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Funcionalidades
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Visualizar a lista de tarefas;
+- Esta lista deve ser ordenável por ordem alfabética, data de criação ou por status;
+- Inserir uma nova tarefa na lista;
+- Remover uma tarefa da lista;
+- Atualizar uma tarefa da lista;
+- A tarefa deve possuir um status editável: pendente, em andamento ou pronto;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Como instalar
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Pré-requisitos para rodar o projeto:
+- NPM
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Copie o ssh do projeto `git@github.com:cae07/TodoFrontEnd.git`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Abra um terminal no seu computador e utilize os comandos abaixo na ordem que são apresentados:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* `git clone git@github.com:cae07/TodoFrontEnd.git`
+* `cd TodoFrontEnd`
+* `npm install`
+* `npm start`
 
-## Learn More
+A aplicação rodará na porta 3000.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Arquitetura da aplicação
 
-### Code Splitting
+```
+├── README.md
+├── src
+│   ├── setupTests.js
+│   ├── index.js
+│   ├── App.js
+│   ├── api.js
+│   ├── Tests
+│   │   ├── login.test.js
+│   │   ├── main.test.js
+│   │   └── renderWithRouter.js
+│   │
+│   ├── Pages
+│   │   ├── index.js
+│   │   ├── Loading.jsx
+│   │   ├── Login.jsx
+│   │   └── Tasks.jsx
+│   │
+│   ├── Images
+│   │   ├── fundo.jsx
+│   │   └── fundo2.jsx
+│   │
+│   ├── Dictionary
+│   │   └── errorMessages.jsx
+│   │
+│   ├── CSS
+│   │   ├── login.css
+│   │   └── todolist.css
+│   │
+│   ├── Context
+│   │   ├── myContext.js
+│   │   └── Provider.js
+│   │
+│   └── Component
+│       ├── helpers
+│       │   ├── index.js
+│       │   └── validateFields.js
+│       │
+│       ├── Modal
+│       │   ├── AlertModal.js
+│       │   ├── DeleteModal.jsx
+│       │   ├── index.js
+│       │   └── UpdateModal.jsx
+│       │
+│       ├── index.js
+│       ├── LoginForm.jsx
+│       ├── TasksBody.jsx
+│       └── TasksHeader.jsx
+│
+├── package-lock.json
+└── package.json
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
 
-### Analyzing the Bundle Size
+### Tecnologias
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+* React
+* bootstrap
+* react-bootstrap
+* eslint
+* dotenv
+* prop-types
+* axios
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Regras de negócio
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+### Tela de login
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Input email
 
-### `npm run build` fails to minify
+necessário email válido no formato `seuEmail@email.com`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Input password
+
+necessário password válido
+
+---
+
+### Tela de Cadastro
+
+#### Input email
+
+necessário email válido no formato `seuEmail@email.com` e necessita ser único.
+
+#### Input password
+Mínimo de 6 digitos
+
+---
+
+### Tela de tasks
+
+#### input nova tarefa
+
+O campo não pode ser vazio
+
+#### input atualizar tarefa
+
+O campo não pode ser vazio
+
+---
+
+### Comandos básicos
+
+---
+
+#### Iniciar aplicação
+- npm start
+
+#### Rodar testes
+- npm test
+
+---
+
+## Próximos passos
+
+* Adicionar filtros para visualização da tabela
+* Continuar os testes do app
+* Deploy no vercel
+
+# Divirta-se
