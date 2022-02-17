@@ -34,7 +34,7 @@ function UpdateModal() {
   };
 
   return (
-    <Modal show={ modalToUpdate } onHide={ () => setModal(false) }>
+    <Modal show={ modalToUpdate } onHide={ () => setModalToUpdate(false) }>
       <Modal.Header closeButton>
         <Modal.Title>Atualizar tarefa</Modal.Title>
       </Modal.Header>

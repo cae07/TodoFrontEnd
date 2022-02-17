@@ -5,7 +5,6 @@ import { Button, Form } from 'react-bootstrap';
 
 function OrderTasksModal() {
   const {
-    setModal,
     modalToSort,
     setModalToSort,
   } = useContext(myContext);
@@ -19,7 +18,7 @@ function OrderTasksModal() {
   };
 
   return (
-    <Modal show={ modalToSort } onHide={ () => setModal(false) }>
+    <Modal show={ modalToSort } onHide={ () => setModalToSort(false) }>
       <Modal.Header closeButton>
         <Modal.Title>Ordenar tarefas</Modal.Title>
       </Modal.Header>
