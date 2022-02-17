@@ -4,6 +4,7 @@ import api from '../api';
 import { AlertModal } from './Modal';
 import { INTERNAL_ERROR, ERROR_TASK } from '../Dictionary/errorMessages';
 import { useNavigate } from 'react-router-dom';
+import { Form } from 'react-bootstrap';
 
 function TasksHeader() {
   const {
@@ -40,12 +41,12 @@ function TasksHeader() {
   };
 
   return (
-    <header>
+    <header className="header-container">
       <AlertModal />
       <span>{ email }</span>
-      <form>
+      <Form className="form-container">
         <label htmlFor="input-new-task">
-          <input
+          <Form.Control
             type="text"
             id="input-new-task"
             placeholder="Insira sua tarefa"
@@ -53,10 +54,14 @@ function TasksHeader() {
             onChange={ (e) => setTask(e.target.value) }
           />
         </label>
-        <button onClick={ handleClick } type="button">
+        <button
+          onClick={ handleClick }
+          type="button"
+          className="button"
+        >
           Nova tarefa
         </button>
-      </form>
+      </Form>
     </header>
   );
 }

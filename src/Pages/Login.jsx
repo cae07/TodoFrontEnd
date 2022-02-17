@@ -1,9 +1,12 @@
 import React from 'react';
 import { LoginForm } from '../Component';
+import '../CSS/login.css';
 
 function Login() {
   return (
-    <LoginForm />
+    <div className="container">
+      <LoginForm />
+    </div>
   );
 }
 

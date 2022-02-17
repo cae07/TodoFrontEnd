@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import myContext from '../../Context/myContext';
 import Modal from 'react-bootstrap/Modal';
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import api from '../../api';
 import { INTERNAL_ERROR } from '../../Dictionary/errorMessages';
 
@@ -39,27 +39,29 @@ function UpdateModal() {
         <Modal.Title>Atualizar tarefa</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <label htmlFor="input-update-task">
-          Tarefa
-          <input
-            type="text"
-            id="input-update-task"
-            value={ toUpdateTask }
-            onChange={ (e) => setToUpdateTask(e.target.value) }
-          />
-        </label>
-        <label htmlFor="input-update-state">
-          Status
-          <select
-            id="input-update-state"
-            name="status"
-            onChange={ (e) => setToUpdateState(e.target.value) }
-          >
-            <option value="pendente">pendente</option>
-            <option value="em andamento">em andamento</option>
-            <option value="pronto">pronto</option>
-          </select>
-        </label>
+        <Form>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+            Tarefa
+            <Form.Control
+              type="text"
+              id="input-update-task"
+              value={ toUpdateTask }
+              onChange={ (e) => setToUpdateTask(e.target.value) }
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            Status
+            <Form.Select
+              id="input-update-state"
+              name="status"
+              onChange={ (e) => setToUpdateState(e.target.value) }
+            >
+              <option value="pendente">pendente</option>
+              <option value="em andamento">em andamento</option>
+              <option value="pronto">pronto</option>
+            </Form.Select>
+            </Form.Group>
+        </Form>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={ handleClick }>

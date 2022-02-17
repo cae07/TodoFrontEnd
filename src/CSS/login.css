@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  align-items: center;
+  background: url('../images/fundo2.jpg');
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-container {
+  align-items: center;
+  background-color: ivory;
+  border: 1px solid #808080;
+  border-left: none;
+  border-radius: 10px;
+  border-top: none;
+  box-shadow: 10px 10px 15px #808080;
+  justify-content: center;
+  height: 300px;
+  padding: 20px;
+  width: 300px;
+}
+
+.button-login {
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 0 25%;
+  width: 50%;
+}
