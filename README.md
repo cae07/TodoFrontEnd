@@ -182,7 +182,7 @@ O campo não pode ser vazio
 
 ## Link para o projeto
 
-`https://todo-front-end-pi.vercel.app/`
+`https://todo-front-end-psi.vercel.app/`
 
 ---
 
