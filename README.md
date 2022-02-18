@@ -188,6 +188,6 @@ O campo não pode ser vazio
 
 ## Link para o repositório de Back-end
 
-`https://github.com/cae07/TodoBackEnd/blob/master/README.md`
+`https://github.com/cae07/TodoBackEnd`
 
 # Divirta-se
